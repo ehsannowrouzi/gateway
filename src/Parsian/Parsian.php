@@ -100,7 +100,7 @@ class Parsian extends PortAbstract implements PortInterface
 		$params = array(
 			'pin' => $this->config->get('gateway.parsian.pin'),
 			'amount' => $this->amount,
-			'orderId' => $this->transactionId(),
+			'orderId' => $this->transactionId(), //this part should be a value in INT32 range , while this doesn't make a value in that range be default. it works for Mellat , but doesn't work like this in Parsian.
 			'callbackUrl' => $this->getCallback(),
 			'authority' => 0,
 			'status' => 1
